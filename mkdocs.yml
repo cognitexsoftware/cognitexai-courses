@@ -1,0 +1,61 @@
+site_name: CognitexAI Hub
+site_description: Learn AI and ML with hands-on courses, notebooks, and demos
+site_url: https://hub.cognitexai.com
+
+repo_url: https://github.com/cognitexsoftware/cognitexai-courses
+repo_name: cognitivexai-courses
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - content.code.annotate
+    - content.action.edit
+    - search.suggest
+    - search.highlight
+    - header.autohide
+
+plugins:
+  - search
+  - mkdocs-jupyter:
+      execute: false
+  - thebe:
+      always_load: false
+      repository_url: https://github.com/cognitexsoftware/cognitexai-courses
+      selector: "div.input_area"
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cognitexsoftware
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/cognitexsoftware
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.emoji

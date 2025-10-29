@@ -1,0 +1,14 @@
+# Python / MkDocs
+__pycache__/
+*.pyc
+site/
+venv/
+
+# Environment files
+.env
+.env.*
+
+# macOS & editor files
+.DS_Store
+.idea/
+.vscode/
