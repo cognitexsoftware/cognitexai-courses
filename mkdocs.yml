@@ -36,10 +36,10 @@ plugins:
   - search
   - mkdocs-jupyter:
       execute: false
-  - thebe:
-      always_load: false
-      repository_url: https://github.com/cognitexsoftware/cognitexai-courses
-      selector: "div.input_area"
+  # - thebe:
+  #     always_load: false
+  #     repository_url: https://github.com/cognitexsoftware/cognitexai-courses
+  #     selector: "div.input_area"
 
 extra:
   social:
