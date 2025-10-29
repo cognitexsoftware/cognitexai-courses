@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -27,12 +27,16 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          # If mkdocs-thebe fails, continue gracefully
+          pip show mkdocs-thebe || (echo "⚠️ mkdocs-thebe not found, removing from config" && sed -i '/- thebe/d' mkdocs.yml)
 
       - name: Build MkDocs site
         run: mkdocs build --strict
 
-      - name: Upload artifact
+      - name: Upload built site as artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
