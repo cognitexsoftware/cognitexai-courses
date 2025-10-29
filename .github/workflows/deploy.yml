@@ -30,8 +30,6 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-          # If mkdocs-thebe fails, continue gracefully
-          pip show mkdocs-thebe || (echo "⚠️ mkdocs-thebe not found, removing from config" && sed -i '/- thebe/d' mkdocs.yml)
 
       - name: Build MkDocs site
         run: mkdocs build --strict
